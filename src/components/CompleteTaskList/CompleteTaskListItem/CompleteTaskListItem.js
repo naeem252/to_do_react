@@ -4,7 +4,7 @@ function CompleteTaskListItem(props) {
   return (
     <li className="MyDayTaskListItem">
       <div className="text">
-        <div className="circle">
+        <div className="circle" onClick={props.onUncomplete}>
           <span className="circle-icon active">
             <ion-icon name="checkmark-outline"></ion-icon>
           </span>

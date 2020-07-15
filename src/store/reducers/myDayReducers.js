@@ -6,6 +6,8 @@ const initState = {
 };
 
 const myDayReducer = (state = initState, action) => {
+  const updatedMyDayTask = [...state.myDayTask];
+  const updatedCompletedTask = [...state.completedTask];
   switch (action.type) {
     case actionTypes.ON_TASK_SUBMIT:
       const updatedDayTask = [...state.myDayTask];
@@ -15,11 +17,18 @@ const myDayReducer = (state = initState, action) => {
         myDayTask: updatedDayTask,
       };
     case actionTypes.ON_TASK_COMPLETE:
-      const updatedMyDayTask = [...state.myDayTask];
-      const updatedCompletedTask = [...state.completedTask];
       const newCompleteTaskName = updatedMyDayTask[action.index];
       updatedMyDayTask.splice(action.index, 1);
       updatedCompletedTask.unshift(newCompleteTaskName);
+      return {
+        ...state,
+        completedTask: updatedCompletedTask,
+        myDayTask: updatedMyDayTask,
+      };
+    case actionTypes.ON_TASK_UNCOMPLETE:
+      const unCompleteName = updatedCompletedTask[action.index];
+      updatedCompletedTask.splice(action.index, 1);
+      updatedMyDayTask.unshift(unCompleteName);
       return {
         ...state,
         completedTask: updatedCompletedTask,

@@ -18,7 +18,13 @@ function CompleteTaskList(props) {
         <div className="ul-wrapper">
           <ul className={props.isActive ? "active" : null}>
             {props.allCompletedTask.map((task, index) => {
-              return <CompletedTaskListItem text={task} key={index} />;
+              return (
+                <CompletedTaskListItem
+                  onUncomplete={props.onUncompleteTask.bind(this, index)}
+                  text={task}
+                  key={index}
+                />
+              );
             })}
           </ul>
         </div>
@@ -36,6 +42,8 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
+    onUncompleteTask: (index) =>
+      dispatch({ type: action.ON_TASK_UNCOMPLETE, index: index }),
     toggleShowCompleteTask: () =>
       dispatch({ type: action.TOOGLE_COMPLETE_TASK_SHOW }),
   };
