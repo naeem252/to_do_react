@@ -8,5 +8,6 @@
 
 main {
   flex: 1 0 0;
-  background-color: #17121e;
+  background-color: #1c2933;
+  padding: 2rem;
 }

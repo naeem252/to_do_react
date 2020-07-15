@@ -1,13 +1,19 @@
 import React from "react";
 import Lists from "./Lists/Lists";
 import "./SideDrawer.css";
+import { connect } from "react-redux";
 
 function SideDrawer(props) {
   return (
-    <nav className="siteDrawer">
+    <nav className={["siteDrawer", props.isActive ? "active" : null].join(" ")}>
       <Lists />
     </nav>
   );
 }
 
-export default SideDrawer;
+const mapStateToProps = (state) => {
+  return {
+    isActive: state.ui.sidebarOn,
+  };
+};
+export default connect(mapStateToProps)(SideDrawer);

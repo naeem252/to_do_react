@@ -1,0 +1,45 @@
+.MyDayTaskListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.479);
+  color: aliceblue;
+  text-transform: capitalize;
+  animation: slide 0.4s ease-out forwards;
+  overflow: hidden;
+}
+@keyframes slide {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.MyDayTaskListItem:not(:last-child) {
+  margin-bottom: 0.7rem;
+}
+.MyDayTaskListItem .text {
+  display: flex;
+}
+.MyDayTaskListItem .text .circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.MyDayTaskListItem .text .circle span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  opacity: 0;
+}
+.MyDayTaskListItem .text .circle:hover span {
+  opacity: 1;
+}
+.MyDayTaskListItem .text .circle span.active {
+  opacity: 1;
+}

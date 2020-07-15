@@ -8,10 +8,12 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import myDayReducer from "./store/reducers/myDayReducers";
 import importantReducer from "./store/reducers/importantReducers";
+import uiReducer from "./store/reducers/uiReducers";
 
 const combiningStore = combineReducers({
-  dayReducer: myDayReducer,
-  importantReducer: importantReducer,
+  myDay: myDayReducer,
+  ui: uiReducer,
+  important: importantReducer,
 });
 
 const store = createStore(combiningStore);

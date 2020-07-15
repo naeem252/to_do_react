@@ -1,0 +1,9 @@
+.MyDay {
+  position: relative;
+  height: 95%;
+}
+
+.list-container {
+  max-height: 75%;
+  overflow-y: auto;
+}

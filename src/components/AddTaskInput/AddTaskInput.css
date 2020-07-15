@@ -1,0 +1,47 @@
+.AddTaskInput {
+  position: absolute;
+  bottom: 2rem;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.479);
+  width: 100%;
+  cursor: text;
+}
+.AddTaskInput__content {
+  display: flex;
+  align-items: center;
+}
+.AddTaskInput__content p {
+  font-weight: 100;
+}
+.AddTaskInput__content-icon {
+  display: flex;
+  margin-right: 1rem;
+  font-size: 3rem;
+  opacity: 0.5;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-group {
+  display: flex;
+}
+.form-control {
+  border: none;
+  background-color: transparent;
+  font-size: 1.8rem;
+  color: aliceblue;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+.circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 2px solid aliceblue;
+  margin-right: 2rem;
+  opacity: 0.6;
+}
