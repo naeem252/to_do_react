@@ -1,18 +1,36 @@
-import * as actionTypes from "../actions/actionTypes";
+import * as actionTypes from '../actions/actionTypes';
 const initState = {
   backdropOn: false,
   sidebarOn: false,
   addTaskOn: false,
   showCompleteTask: false,
+  modalShow: false,
+  modalContent: '',
+  deletedIndex: null,
+  deleteActionPlace: null,
 };
 
 const uiReducer = (state = initState, action) => {
   switch (action.type) {
-    case actionTypes.TOGGLE_SIDEBAR:
+    case actionTypes.SHOW_SIDEBAR:
       return {
         ...state,
-        sidebarOn: !state.sidebarOn,
-        backdropOn: !state.backdropOn,
+        sidebarOn: true,
+        backdropOn: true,
+      };
+    case actionTypes.HIDE_SIDEBAR:
+      if (state.modalShow) {
+        return {
+          ...state,
+          sidebarOn: false,
+          backdropOn: false,
+          modalShow: false,
+        };
+      }
+      return {
+        ...state,
+        sidebarOn: false,
+        backdropOn: false,
       };
     case actionTypes.ACTIVE_ADD_TASK:
       return {
@@ -28,6 +46,23 @@ const uiReducer = (state = initState, action) => {
       return {
         ...state,
         showCompleteTask: !state.showCompleteTask,
+      };
+    case actionTypes.TOGGLE_MODAL:
+      return {
+        ...state,
+        modalShow: !state.modalShow,
+        backdropOn: !state.backdropOn,
+        modalContent: action.content,
+        deletedIndex: action.index,
+        deleteActionPlace: action.deletePlace,
+      };
+    case actionTypes.DELETE_TASK:
+      return {
+        ...state,
+        modalShow: !state.modalShow,
+        backdropOn: !state.backdropOn,
+        modalContent: '',
+        deletedIndex: null,
       };
   }
 

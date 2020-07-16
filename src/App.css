@@ -11,3 +11,31 @@ main {
   background-color: #1c2933;
   padding: 2rem;
 }
+.btn {
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  margin: 1rem 0;
+  display: inline-block;
+  color: aliceblue;
+  outline: none;
+  transition: 0.4s ease-out;
+  backface-visibility: hidden;
+}
+.btn-close {
+  background-color: #353944;
+  margin-right: 1rem;
+}
+.btn-close:hover {
+  background-color: #28292e;
+}
+.btn-danger {
+  background-color: #aa3f55;
+}
+.btn-danger:hover {
+  background-color: #c23e58;
+}
+.btn:active {
+  transform: scale(0.9);
+}

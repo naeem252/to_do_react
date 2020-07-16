@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function CompleteTaskListItem(props) {
   return (
@@ -12,7 +12,12 @@ function CompleteTaskListItem(props) {
         <span>{props.text}</span>
       </div>
       <div className="icons">
-        <ion-icon name="star"></ion-icon>
+        <span className="star_icon">
+          {props.isImp ? <ion-icon name="star"></ion-icon> : <ion-icon name="star-outline"></ion-icon>}
+        </span>
+        <span className="delete_icon" onClick={props.onModalDelete}>
+          <ion-icon name="trash-bin-outline"></ion-icon>
+        </span>
       </div>
     </li>
   );

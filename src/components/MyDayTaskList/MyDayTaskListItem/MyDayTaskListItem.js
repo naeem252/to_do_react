@@ -1,5 +1,5 @@
-import React from "react";
-import "./MyDayTaskListItem.css";
+import React from 'react';
+import './MyDayTaskListItem.css';
 
 function MyDayTaskListItem(props) {
   return (
@@ -13,7 +13,12 @@ function MyDayTaskListItem(props) {
         <span>{props.text}</span>
       </div>
       <div className="icons">
-        <ion-icon name="star-outline"></ion-icon>
+        <span className="star_icon" onClick={props.onImportant}>
+          {props.isImp ? <ion-icon name="star"></ion-icon> : <ion-icon name="star-outline"></ion-icon>}
+        </span>
+        <span className="delete_icon" onClick={props.onModalDelete}>
+          <ion-icon name="trash-bin-outline"></ion-icon>
+        </span>
       </div>
     </li>
   );

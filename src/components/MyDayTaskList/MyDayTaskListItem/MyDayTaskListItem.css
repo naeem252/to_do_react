@@ -43,3 +43,21 @@
 .MyDayTaskListItem .text .circle span.active {
   opacity: 1;
 }
+
+.MyDayTaskListItem .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.MyDayTaskListItem .icons span {
+  cursor: pointer;
+  display: flex;
+  opacity: 0.7;
+  transition: 0.4s;
+}
+.MyDayTaskListItem .icons span:hover {
+  opacity: 1;
+}
+.MyDayTaskListItem .icons span:nth-of-type(1) {
+  margin-right: 1rem;
+}

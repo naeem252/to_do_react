@@ -1,7 +1,7 @@
-import React from "react";
-import "./Hambarger.css";
-import { connect } from "react-redux";
-import * as actionTypes from "../../store/actions/actionTypes";
+import React from 'react';
+import './Hambarger.css';
+import { connect } from 'react-redux';
+import * as actionTypes from '../../store/actions/actionTypes';
 
 function Hambarger(props) {
   return (
@@ -12,7 +12,7 @@ function Hambarger(props) {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleSidebar: () => dispatch({ type: actionTypes.TOGGLE_SIDEBAR }),
+    toggleSidebar: () => dispatch({ type: actionTypes.SHOW_SIDEBAR }),
   };
 };
 export default connect(null, mapDispatchToProps)(Hambarger);

@@ -1,14 +1,11 @@
-import React from "react";
-import "./Backdrop.css";
-import { connect } from "react-redux";
-import * as actionTypes from "../../store/actions/actionTypes";
+import React from 'react';
+import './Backdrop.css';
+import { connect } from 'react-redux';
+import * as actionTypes from '../../store/actions/actionTypes';
 
 function Backdrop(props) {
   return (
-    <div
-      onClick={props.toggleSidebar}
-      className={["Backdrop", props.isBackdropActive ? "active" : ""].join(" ")}
-    ></div>
+    <div onClick={props.toggleSidebar} className={['Backdrop', props.isBackdropActive ? 'active' : ''].join(' ')}></div>
   );
 }
 const mapStateToProps = (state) => {
@@ -19,7 +16,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleSidebar: () => dispatch({ type: actionTypes.TOGGLE_SIDEBAR }),
+    toggleSidebar: () => dispatch({ type: actionTypes.HIDE_SIDEBAR }),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Backdrop);

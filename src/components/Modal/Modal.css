@@ -1,0 +1,67 @@
+.Modal {
+  position: absolute;
+  z-index: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+
+  background-color: #201224;
+  /* height: 0; */
+  overflow: hidden;
+}
+.Modal.inActive {
+  animation: fadeOut 0.4s ease-out forwards;
+  height: 0;
+}
+.Modal.active {
+  animation: scaleDown 0.4s ease-out forwards;
+}
+@keyframes scaleDown {
+  0% {
+    padding: 1.5rem;
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(1.5);
+    height: auto;
+  }
+  100% {
+    height: auto;
+    padding: 1.5rem;
+    opacity: 1;
+    transform: translate(-50%, -60%) scale(1);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -60%) scale(1);
+  }
+  99% {
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(1.5);
+  }
+  100% {
+    height: 0;
+    padding: 0;
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(1.5);
+  }
+}
+.Modal > h4 {
+  text-transform: capitalize;
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.Modal .cls-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s ease-out;
+  font-size: 2rem;
+}
+.Modal .cls-icon:hover {
+  opacity: 1;
+}
